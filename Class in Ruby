@@ -1,0 +1,46 @@
+class Car
+  attr_accessor :model, :year, :tank_vol, :start, :speed
+  def initialize(model, year, tank_vol, start=false, speed=0, retro=false)
+    @model = model
+    @year = year
+    @tank_vol =tank_vol
+    @start = start
+    @speed = speed
+    @retro = retro
+  end
+    
+  def start_up
+    self.start = true
+  end
+  
+  def stop
+    self.start = false
+  end
+  
+  def speed_up(added_speed)
+    if self.start
+      self.speed += added_speed
+    else
+      puts("Your car is turned off!")
+    end
+  end
+  
+  def retro
+    if 2021 - self.year > 25
+      self.retro = true
+    else
+      puts("Your car is not old enough!")
+    end
+  end
+end
+
+my_car = Car.new("A3", 2020, 50)
+puts my_car.model
+my_car.start_up()
+puts my_car.start
+puts my_car.speed
+my_car.speed_up(50)
+puts my_car.speed
+my_car.stop
+puts my_car.speed_up(50)
+puts my_car.retro
