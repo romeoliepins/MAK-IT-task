@@ -68,11 +68,9 @@ class Car:
 
     def is_retro(self):
         if current_year - self.year > 25:
-            self.retro = True
-            print("You have a retro car!")
+            return self.retro and print("You have a retro car!")
         else:
-            self.retro = False
-            print("Your car needs to be at least 25 years old to qualify for a retro status.")
+            return not self.retro and print("Your car needs to be at least 25 years old to qualify for a retro status.")
 
     def __str__(self):
         return str(self.model), str(self.year)
