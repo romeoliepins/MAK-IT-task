@@ -61,7 +61,7 @@ class Car:
                 self.tank += amount
                 if self.tank == self.tank_vol:
                     print("The tank is full!")
-                elif 0 < self.tank < 50:
+                elif 0 < self.tank < self.tank_vol:
                     print("You have {}l in your tank now".format(self.tank))
             else:
                 print("Your tank is not big enough! Try filling a little less.")
